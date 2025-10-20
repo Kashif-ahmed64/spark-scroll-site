@@ -3,11 +3,12 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { MessageSquare, Mail, Phone, Github, Linkedin } from "lucide-react";
+import { MessageSquare, Mail, Github, Linkedin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export const Contact = () => {
   const { toast } = useToast();
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,13 +16,46 @@ export const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon!",
-    });
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setIsLoading(true);
+
+    try {
+      // Formspree endpoint - Sign up at https://formspree.io and replace YOUR_FORM_ID
+      const response = await fetch("https://formspree.io/f/xnnqanez", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _replyto: formData.email,
+        }),
+      });
+
+      if (response.ok) {
+        console.log("Message sent successfully at:", new Date().toISOString());
+        toast({
+          title: "✅ Message sent successfully!",
+          description: "Thank you for reaching out. I'll get back to you soon!",
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+      toast({
+        title: "⚠️ Message failed to send",
+        description: "Please try again later or contact me directly via email.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const contactMethods = [
@@ -111,9 +145,10 @@ export const Contact = () => {
               <Button 
                 type="submit" 
                 size="lg" 
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
+                disabled={isLoading}
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold transition-all hover:shadow-lg hover:shadow-primary/30 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {isLoading ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </Card>
