@@ -21,8 +21,7 @@ export const Contact = () => {
     setIsLoading(true);
 
     try {
-      // Formspree endpoint - Sign up at https://formspree.io and replace YOUR_FORM_ID
-      const response = await fetch("https://formspree.io/f/xnnqanez", {
+      const response = await fetch("https://formspree.io/f/mqayjrlg", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -84,7 +83,7 @@ export const Contact = () => {
       icon: Github,
       title: "GitHub",
       subtitle: "View my code",
-      link: "https://github.com",
+      link: "https://github.com/Kashif-ahmed64",
       color: "text-gray-400",
     },
   ];

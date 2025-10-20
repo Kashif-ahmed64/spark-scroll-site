@@ -31,8 +31,16 @@ export const Projects = () => {
       description: "Mobile e-book reading app featuring Turkish romantic series with offline reading and bookmark functionality.",
       tags: ["Flutter", "Firebase", "AdMob"],
       category: "Mobile Apps",
-      status: "Published",
+      status: "Completed",
       gradient: "from-purple-500 to-pink-600"
+    },
+    {
+      title: "Dialmind",
+      description: "AI-powered communication platform with intelligent conversation management and analytics.",
+      tags: ["React", "Node.js", "AI", "WebSocket"],
+      category: "Web Apps",
+      status: "Completed",
+      gradient: "from-indigo-500 to-purple-600"
     },
     {
       title: "ActiVision",
@@ -133,17 +141,19 @@ export const Projects = () => {
                   <Button 
                     size="sm" 
                     className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground"
+                    onClick={() => window.open("https://github.com/Kashif-ahmed64?tab=repositories", "_blank")}
                   >
-                    <ExternalLink className="w-4 h-4 mr-2" />
+                    <Github className="w-4 h-4 mr-2" />
                     View Code
                   </Button>
                   <Button 
                     size="sm" 
                     variant="outline"
                     className="flex-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                    onClick={() => window.open("https://github.com/Kashif-ahmed64?tab=repositories", "_blank")}
                   >
-                    <Github className="w-4 h-4 mr-2" />
-                    Live Demo
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    Repository
                   </Button>
                 </div>
               </div>

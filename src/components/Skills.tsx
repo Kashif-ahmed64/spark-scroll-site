@@ -29,7 +29,6 @@ export const Skills = () => {
     { name: "Flutter", category: "Mobile", level: "Intermediate", color: "bg-blue-400" },
     { name: "Git", category: "Tools", level: "Expert", color: "bg-red-500" },
     { name: "Docker", category: "Tools", level: "Advanced", color: "bg-blue-600" },
-    { name: "AWS", category: "Tools", level: "Advanced", color: "bg-orange-400" },
   ];
 
   const filteredSkills = activeCategory === "All Skills" 
