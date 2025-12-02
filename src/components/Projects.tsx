@@ -11,6 +11,14 @@ export const Projects = () => {
 
   const projects = [
     {
+      title: "Aurora",
+      description: "AI-Powered Team & Workflow Management Platform with Slack/Discord-like features, role-based access, task automation, and AI summaries.",
+      tags: ["React", "Node.js", "AI", "WebSocket", "PostgreSQL"],
+      category: "Web Apps",
+      status: "In Development",
+      gradient: "from-violet-500 to-purple-600"
+    },
+    {
       title: "Ralana Store",
       description: "Fully functional multi-vendor e-commerce system with user authentication, product management, and secure checkout flow.",
       tags: ["React", "Node.js", "MongoDB", "JWT Auth"],
@@ -27,12 +35,28 @@ export const Projects = () => {
       gradient: "from-green-500 to-teal-600"
     },
     {
-      title: "CanYaman Books",
+      title: "CanYuman Books",
       description: "Mobile e-book reading app featuring Turkish romantic series with offline reading and bookmark functionality.",
       tags: ["Flutter", "Firebase", "AdMob"],
       category: "Mobile Apps",
       status: "Completed",
       gradient: "from-purple-500 to-pink-600"
+    },
+    {
+      title: "ReadHub",
+      description: "Cross-platform e-book reading app with book listing, reading interface, downloads, and bookmark features built with React Native.",
+      tags: ["React Native", "Expo", "Cursor AI"],
+      category: "Mobile Apps",
+      status: "Completed",
+      gradient: "from-amber-500 to-orange-600"
+    },
+    {
+      title: "HealthWiz",
+      description: "Healthcare reports and diagnostics app with dashboards for uploading, tracking, and viewing medical test results.",
+      tags: ["React", "Tailwind CSS", "Node.js"],
+      category: "Web Apps",
+      status: "Completed",
+      gradient: "from-emerald-500 to-teal-600"
     },
     {
       title: "Dialmind",
@@ -52,11 +76,19 @@ export const Projects = () => {
     },
     {
       title: "Credit Card Fraud Detection",
-      description: "Machine learning model to detect fraudulent transactions using advanced algorithms.",
-      tags: ["Python", "Scikit-learn", "Pandas", "NumPy"],
+      description: "ML pipeline using anomaly detection with 98% precision using ensemble models (Random Forest, XGBoost).",
+      tags: ["Python", "Scikit-learn", "XGBoost", "Flask"],
       category: "AI/ML",
       status: "Completed",
       gradient: "from-cyan-500 to-indigo-600"
+    },
+    {
+      title: "Emergency Classification System",
+      description: "AI-powered emergency classification with BiLSTM, speech-to-text pipeline, and VoIP/GSM integration for real-time reporting.",
+      tags: ["Python", "TensorFlow", "React", "VoIP"],
+      category: "AI/ML",
+      status: "Completed",
+      gradient: "from-red-500 to-rose-600"
     },
     {
       title: "Churn Prediction System",
@@ -65,22 +97,6 @@ export const Projects = () => {
       category: "AI/ML",
       status: "Completed",
       gradient: "from-yellow-500 to-orange-600"
-    },
-    {
-      title: "Emergency Assistant",
-      description: "AI-powered emergency response system with location tracking and automated alert system.",
-      tags: ["React Native", "Firebase", "Google Maps API"],
-      category: "Mobile Apps",
-      status: "In Development",
-      gradient: "from-red-500 to-pink-600"
-    },
-    {
-      title: "Real-Time Object Detection",
-      description: "Advanced real-time object detection system using state-of-the-art deep learning models.",
-      tags: ["Python", "PyTorch", "OpenCV", "YOLO"],
-      category: "AI/ML",
-      status: "Completed",
-      gradient: "from-blue-500 to-purple-600"
     },
   ];
 
