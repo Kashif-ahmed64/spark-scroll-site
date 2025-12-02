@@ -75,8 +75,8 @@ export const Contact = () => {
     {
       icon: Linkedin,
       title: "LinkedIn",
-      subtitle: "Professional network",
-      link: "https://linkedin.com",
+      subtitle: "Kashif Ahmed",
+      link: "https://www.linkedin.com/in/kashif-ahmed-38b2b739a",
       color: "text-blue-600",
     },
     {
