@@ -42,19 +42,19 @@ export const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 px-6 bg-muted/30">
+    <section id="skills" className="py-16 px-6 bg-muted/30">
       <div className="container mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 gradient-border pb-4">
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 gradient-border pb-4">
           Skills & Expertise
         </h2>
-        <p className="text-center text-muted-foreground mb-12">Technologies I work with to build amazing solutions</p>
+        <p className="text-center text-muted-foreground mb-8 text-sm md:text-base">Technologies I work with to build amazing solutions</p>
 
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        <div className="flex flex-wrap justify-center gap-1.5 md:gap-2 mb-8">
           {categories.map((category) => (
             <Badge
               key={category}
               variant={activeCategory === category ? "default" : "outline"}
-              className={`cursor-pointer px-6 py-2 text-sm transition-all ${
+              className={`cursor-pointer px-3 md:px-6 py-1.5 text-xs md:text-sm transition-all ${
                 activeCategory === category 
                   ? "bg-primary text-primary-foreground hover:bg-primary/90" 
                   : "border-primary/30 text-foreground hover:border-primary hover:bg-primary/10"
@@ -66,31 +66,32 @@ export const Skills = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-16">
+        {/* Compact grid - smaller on mobile */}
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-2 md:gap-4 mb-12">
           {filteredSkills.map((skill, index) => (
             <Card
               key={index}
-              className="p-4 bg-card border-primary/20 hover:border-primary transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 text-center"
+              className="p-2 md:p-4 bg-card border-primary/20 hover:border-primary transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20 text-center"
             >
-              <div className={`w-12 h-12 ${skill.color} rounded-lg mx-auto mb-3 flex items-center justify-center text-white font-bold text-lg`}>
+              <div className={`w-8 h-8 md:w-12 md:h-12 ${skill.color} rounded-lg mx-auto mb-2 flex items-center justify-center text-white font-bold text-sm md:text-lg`}>
                 {skill.name.charAt(0)}
               </div>
-              <h3 className="font-semibold text-sm mb-1">{skill.name}</h3>
-              <p className="text-xs text-primary">{skill.level}</p>
+              <h3 className="font-semibold text-[10px] md:text-sm mb-0.5 truncate">{skill.name}</h3>
+              <p className="text-[8px] md:text-xs text-primary">{skill.level}</p>
             </Card>
           ))}
         </div>
 
-        <div className="max-w-2xl mx-auto">
-          <h3 className="text-2xl font-bold text-center mb-8">Primary Languages</h3>
-          <div className="space-y-6">
+        <div className="max-w-xl mx-auto">
+          <h3 className="text-xl md:text-2xl font-bold text-center mb-6">Primary Languages</h3>
+          <div className="space-y-4">
             {primaryLanguages.map((lang, index) => (
               <div key={index}>
-                <div className="flex justify-between mb-2">
-                  <span className="font-semibold">{lang.name}</span>
-                  <span className="text-primary">{lang.level}%</span>
+                <div className="flex justify-between mb-1.5">
+                  <span className="font-semibold text-sm md:text-base">{lang.name}</span>
+                  <span className="text-primary text-sm">{lang.level}%</span>
                 </div>
-                <div className="h-3 bg-secondary rounded-full overflow-hidden">
+                <div className="h-2.5 bg-secondary rounded-full overflow-hidden">
                   <div
                     className={`h-full ${lang.color} transition-all duration-1000 ease-out`}
                     style={{ width: `${lang.level}%` }}
