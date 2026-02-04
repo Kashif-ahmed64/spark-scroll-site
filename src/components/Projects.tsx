@@ -16,7 +16,7 @@ export const Projects = () => {
   const [showAll, setShowAll] = useState(false);
   const [privateDialogOpen, setPrivateDialogOpen] = useState(false);
 
-  const filters = ["All Projects", "Web Apps", "Mobile Apps", "AI/ML", "E-Commerce"];
+  const filters = ["All Projects", "Web Apps", "Mobile Apps", "AI/ML", "E-Commerce", "Desktop Apps"];
 
   const projects = [
     {
@@ -117,6 +117,15 @@ export const Projects = () => {
       category: "AI/ML",
       status: "Completed",
       gradient: "from-yellow-500 to-orange-600",
+      isPrivate: true
+    },
+    {
+      title: "Employee Management System",
+      description: "Desktop application for managing employee records with full CRUD operations, built using .NET Framework and SQLite database.",
+      tags: [".NET Framework", "C#", "SQLite", "Windows Forms"],
+      category: "Desktop Apps",
+      status: "Completed",
+      gradient: "from-blue-600 to-indigo-700",
       isPrivate: true
     },
   ];
