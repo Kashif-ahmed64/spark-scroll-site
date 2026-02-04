@@ -20,7 +20,7 @@ export const Hero = () => {
         <h1 className="text-5xl md:text-7xl font-bold mb-4 text-foreground">Kashif Ahmed</h1>
 
         <div className="text-2xl md:text-3xl mb-6 h-12">
-          <TypewriterText texts={["AI Engineer", "ML Engineer", "Full Stack Developer"]} />
+          <TypewriterText texts={["Software Developer", "ML Engineer", "Full Stack Developer"]} />
         </div>
 
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
