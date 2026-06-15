@@ -337,6 +337,51 @@ export const Projects = () => {
           </div>
         </DialogContent>
       </Dialog>
+
+      <Dialog open={!!detailProject} onOpenChange={(o) => !o && setDetailProject(null)}>
+        <DialogContent className="bg-card border-primary/30 max-w-lg">
+          {detailProject && (
+            <>
+              <div className={`h-28 -mx-6 -mt-6 mb-2 bg-gradient-to-br ${detailProject.gradient} flex items-center justify-center px-4`}>
+                <h3 className="text-2xl font-bold text-white text-center">{detailProject.title}</h3>
+              </div>
+              <DialogHeader>
+                <DialogTitle className="flex items-center justify-between gap-2">
+                  <span>About this project</span>
+                  <Badge className="bg-primary text-primary-foreground">{detailProject.status}</Badge>
+                </DialogTitle>
+                <DialogDescription className="pt-2 text-sm leading-relaxed text-muted-foreground">
+                  {detailProject.about || detailProject.description}
+                </DialogDescription>
+              </DialogHeader>
+              <div className="flex flex-wrap gap-1 mt-2">
+                {detailProject.tags.map((t: string, i: number) => (
+                  <Badge key={i} variant="secondary" className="text-[11px]">{t}</Badge>
+                ))}
+              </div>
+              <div className="flex gap-2 mt-4">
+                <Button
+                  className="flex-1 bg-primary hover:bg-primary/90"
+                  onClick={() => {
+                    if (detailProject.liveUrl) window.open(detailProject.liveUrl, "_blank");
+                    else { setDetailProject(null); setPrivateDialogOpen(true); }
+                  }}
+                >
+                  {detailProject.liveUrl ? (<><ExternalLink className="w-4 h-4 mr-2" />Live Demo</>) : (<><Lock className="w-4 h-4 mr-2" />Private</>)}
+                </Button>
+                <Button
+                  variant="outline"
+                  className="flex-1 border-primary"
+                  onClick={() => window.open("https://github.com/Kashif-ahmed64?tab=repositories", "_blank")}
+                >
+                  <Github className="w-4 h-4 mr-2" />
+                  GitHub
+                </Button>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
