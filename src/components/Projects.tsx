@@ -216,7 +216,8 @@ export const Projects = () => {
           {displayedProjects.map((project, index) => (
             <Card
               key={index}
-              className="overflow-hidden bg-card border-primary/20 hover:border-primary transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/10 group"
+              className="overflow-hidden bg-card border-primary/20 hover:border-primary transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/10 group cursor-pointer"
+              onClick={() => setDetailProject(project)}
             >
               <div className={`h-24 sm:h-32 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -247,7 +248,7 @@ export const Projects = () => {
                   <Button 
                     size="sm" 
                     className="flex-1 h-8 text-xs bg-primary hover:bg-primary/90 text-primary-foreground"
-                    onClick={() => window.open("https://github.com/Kashif-ahmed64?tab=repositories", "_blank")}
+                    onClick={(e) => { e.stopPropagation(); window.open("https://github.com/Kashif-ahmed64?tab=repositories", "_blank"); }}
                   >
                     <Github className="w-3 h-3 mr-1" />
                     Code
@@ -256,7 +257,7 @@ export const Projects = () => {
                     size="sm" 
                     variant="outline"
                     className="flex-1 h-8 text-xs border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                    onClick={() => handleLiveDemo(project)}
+                    onClick={(e) => { e.stopPropagation(); handleLiveDemo(project); }}
                   >
                     {project.isPrivate && !project.liveUrl ? (
                       <>
