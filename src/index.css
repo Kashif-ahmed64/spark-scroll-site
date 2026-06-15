@@ -116,4 +116,34 @@ All colors MUST be HSL.
     height: 3px;
     background: linear-gradient(90deg, hsl(var(--cyan)), hsl(var(--pink)));
   }
+
+  .highlight-hover {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    transition: color 0.3s ease;
+  }
+
+  .highlight-hover::before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    right: -4px;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, hsl(var(--cyan)/0.35), hsl(var(--pink)/0.35));
+    border-radius: 4px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+    z-index: -1;
+  }
+
+  .highlight-hover:hover::before {
+    transform: scaleX(1);
+  }
+
+  .highlight-hover:hover {
+    color: hsl(var(--foreground));
+  }
 }
