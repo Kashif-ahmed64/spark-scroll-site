@@ -88,6 +88,14 @@ export default {
             transform: "translateY(-20px)",
           },
         },
+        "float-delayed": {
+          "0%, 100%": {
+            transform: "translateY(0px)",
+          },
+          "50%": {
+            transform: "translateY(-14px)",
+          },
+        },
         "gradient-shift": {
           "0%, 100%": {
             backgroundPosition: "0% 50%",
@@ -111,6 +119,7 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "float": "float 6s ease-in-out infinite",
+        "float-delayed": "float-delayed 5s ease-in-out infinite 1s",
         "gradient-shift": "gradient-shift 3s ease infinite",
         "fade-in-up": "fade-in-up 0.6s ease-out",
       },
