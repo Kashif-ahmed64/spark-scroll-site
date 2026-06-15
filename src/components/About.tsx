@@ -1,4 +1,4 @@
-import { Rocket, Laptop, Trophy, Users } from "lucide-react";
+import { Rocket, Laptop, Trophy } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -7,7 +7,6 @@ export const About = () => {
     { icon: Rocket, title: "Multiple", subtitle: "Projects Completed" },
     { icon: Laptop, title: "Diverse", subtitle: "Technologies Mastered" },
     { icon: Trophy, title: "Professional", subtitle: "Certifications" },
-    { icon: Users, title: "High", subtitle: "Client Satisfaction" },
   ];
 
   return (
@@ -31,7 +30,7 @@ export const About = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {stats.map((stat, index) => (
             <Card
               key={index}

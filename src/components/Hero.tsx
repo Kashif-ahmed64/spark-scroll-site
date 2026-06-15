@@ -12,7 +12,8 @@ export const Hero = () => {
             <img
               src={profileImage}
               alt="Kashif Ahmed"
-              className="w-full h-full rounded-full object-cover object-top relative z-10"
+              className="w-full h-full rounded-full object-cover relative z-10 scale-110"
+              style={{ objectPosition: "50% 25%" }}
             />
           </div>
         </div>
